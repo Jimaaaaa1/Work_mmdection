@@ -1,0 +1,22 @@
+cmake_minimum_required(VERSION 3.5)
+project(deepsort-cpp LANGUAGES CXX)
+
+set(CMAKE_BUILD_TYPE RelWithDebInfo)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+if (CMAKE_HOST_UNIX)
+list(APPEND CMAKE_PREFIX_PATH /home/hf/wuyiming/opencv-install/lib/cmake/opencv4/)
+include_directories(/usr/local/include/onnxruntime/core/session/)
+else ()
+list(APPEND CMAKE_PREFIX_PATH E:/BaiduNetdiskDownload/opencv/build/x64/vc16/lib)
+include_directories(../include)
+link_directories(../lib)
+endif ()
+find_package(OpenCV REQUIRED)
+
+include_directories(${OpenCV_INCLUDE_DIRS})
+add_executable(deepsort deepsort.cpp yolo.cpp base.cpp tracker.cpp Hungarian.cpp)
+target_link_libraries(deepsort ${OpenCV_LIBS} onnxruntime pthread)
+

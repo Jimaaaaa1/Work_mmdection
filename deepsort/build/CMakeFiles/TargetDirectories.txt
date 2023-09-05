@@ -1,0 +1,3 @@
+/home/hf/wuyiming/deepsort/build/CMakeFiles/deepsort.dir
+/home/hf/wuyiming/deepsort/build/CMakeFiles/edit_cache.dir
+/home/hf/wuyiming/deepsort/build/CMakeFiles/rebuild_cache.dir

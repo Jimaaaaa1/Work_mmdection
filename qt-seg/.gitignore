@@ -1,0 +1,11 @@
+build/
+/lib
+/*.txt
+# onnx, opencv2
+/include
+
+/CMakeLists.txt.user
+*.onnx
+.DS_Store
+.vscode
+*.pt
